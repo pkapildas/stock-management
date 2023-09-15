@@ -15,7 +15,7 @@ public class StockManagement
             "StockB"
         );
 
-        StockToCashConverter stockToCashConverter = new StockToCashConverter();
+        StockToMoneyConverter stockToCashConverter = new StockToMoneyConverter();
         stockToCashConverter.convert(stocks, wallet);
 
         System.out.println(wallet.getBalance());
