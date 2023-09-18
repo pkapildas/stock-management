@@ -13,7 +13,7 @@ public class Wallet {
     }
 
     public void addMoney(Integer ammount) {
-        this.balance += 1;
+        this.balance += ammount;
     }
 
     public Integer getBalance() {
