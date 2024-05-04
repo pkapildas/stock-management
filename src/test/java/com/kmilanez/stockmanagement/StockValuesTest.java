@@ -25,7 +25,7 @@ class StockValuesTest {
 
     @Test
     void itShouldAllowANewStockToBeAdded() {
-        StockValues.addStock(new ValuePair<String,Double>("Stock_K", 5.0));
+        StockValues.addStock("Stock_K", 5.0);
         Double stockValue = StockValues.findStockValuesByStockName("Stock_K");
         assertEquals(5.0, stockValue);
     }
@@ -34,7 +34,7 @@ class StockValuesTest {
     @Timeout(value = 10, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
     void shouldInsertTenMillionNewStocksIn10Seconds() throws InterruptedException {
         for (int i = 0; i < 10000000; i++) {
-            StockValues.addStock(new ValuePair<String,Double>("Stock_%s".formatted(i), Double.valueOf(i)));
+            StockValues.addStock("Stock_%s".formatted(i), Double.valueOf(i));
         }
     }
 
@@ -42,7 +42,7 @@ class StockValuesTest {
     @Timeout(value = 1, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
     void shouldInsertTenMillionNewStocksIn1Second() throws InterruptedException {
         for (int i = 0; i < 10000000; i++) {
-            StockValues.addStock(new ValuePair<String,Double>("Stock_%s".formatted(i), Double.valueOf(i)));
+            StockValues.addStock("Stock_%s".formatted(i), Double.valueOf(i));
         }
     }
 

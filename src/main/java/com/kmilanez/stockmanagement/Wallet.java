@@ -2,21 +2,21 @@ package com.kmilanez.stockmanagement;
 
 public class Wallet {
 
-    private Integer balance;
+    private Double balance;
 
     public Wallet() {
-        this.balance = 0;
+        this.balance = 0d;
     }
 
-    public Wallet(Integer initialBalance) {
+    public Wallet(Double initialBalance) {
         this.balance = initialBalance;
     }
 
-    public void addMoney(Integer ammount) {
-        this.balance += 1;
+    public void addMoney(Double ammount) {
+        this.balance += ammount;
     }
 
-    public Integer getBalance() {
+    public Double getBalance() {
         return this.balance;
     }
 }

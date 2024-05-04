@@ -35,7 +35,7 @@ class StockToMoneyConverterTest {
 
         converter.convert(List.of(StockNames.STOCK_B), wallet);
         
-        assertEquals(1.1, wallet.getBalance());
+        assertEquals(2.0, wallet.getBalance());
     }
 
 }
