@@ -38,4 +38,25 @@ class StockToMoneyConverterTest {
         assertEquals(2.0, wallet.getBalance());
     }
 
+
+    @Test
+    void it_test_invalid_stock_name() {
+        var converter = new StockToMoneyConverter();
+        var wallet = new Wallet();
+
+        converter.convert(List.of("STOCK_ADANI_X"), wallet);
+
+        assertEquals(0.0, wallet.getBalance());
+    }
+
+    @Test
+    void ut_test_invalid_stock_name() {
+  StockValues.addStock("TPOWER", 100.0);
+        Double tpower = StockValues.findStockValuesByStockName("TPOWER");
+
+        assertEquals(100.0, tpower);
+          tpower = StockValues.findStockValuesByStockName("TPOWER1");
+
+        assertEquals(0.0, tpower);
+    }
 }
